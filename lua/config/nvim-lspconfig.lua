@@ -42,8 +42,8 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ft', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-  if client.name == "tsserver" then
-  require 'illuminate'.on_attach(client)
+  if client.name == 'tsserver' then
+    require 'illuminate'.on_attach(client)
     client.resolved_capabilities.document_formatting = false
   end
 end

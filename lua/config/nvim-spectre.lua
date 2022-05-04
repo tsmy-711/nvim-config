@@ -3,7 +3,9 @@ if not status_ok then
   return
 end
 
-local opt = { noremap = true, silent = true }
-vim.api.nvim_set_keymap('n', '<leader>S', '<cmd>spectre.open()<CR>', opt)
+vim.cmd([[
+  nnoremap <leader>S <cmd>lua require('spectre').open()<CR>
+]])
+
 
 

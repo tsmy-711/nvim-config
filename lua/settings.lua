@@ -69,9 +69,8 @@ vim.cmd([[
   hi LineNr guibg=NONE ctermbg=NONE
   hi SignColumn guibg=NONE ctermbg=NONE
   hi EndOfBuffer guibg=NONE ctermbg=NONE
-  hi! VertSplit guifg=#363d45 guibg=#363d45
+  hi VertSplit guifg=#363d45 guibg=#363d45
 ]])
-
 
 -- 复制高亮
 vim.cmd [[

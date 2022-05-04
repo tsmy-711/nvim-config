@@ -6,9 +6,8 @@ vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 vim.wo.foldlevel = 99
 
-
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "html", "css", "vim", "lua", "javascript", "typescript", "tsx" }, 
+  ensure_installed = { 'html', 'css', 'vim', 'lua', 'javascript', 'typescript', 'tsx' }, 
   autotag = {
     enable = true,
   },
