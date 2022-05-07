@@ -9,7 +9,6 @@ vim.g.indent_blankline_filetype_exclude = {
   'markdown'
 }
 
--- vim.g.indentLine_char = '¦'
 vim.g.indentLine_char = ''
 
 -- vim.g.indent_blankline_use_treesitter = true

@@ -51,6 +51,7 @@ packer.startup(function()
 
   use 'nvim-telescope/telescope.nvim'
   use 'lewis6991/gitsigns.nvim'
+  use 'sindrets/diffview.nvim'
   use 'jlanzarotta/bufexplorer'
   use 'windwp/nvim-spectre'
   use 'MattesGroeger/vim-bookmarks'
@@ -61,6 +62,7 @@ packer.startup(function()
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'folke/todo-comments.nvim'
+  use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
   use 'tpope/vim-surround'
   use 'RRethy/vim-illuminate'

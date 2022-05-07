@@ -1,8 +1,22 @@
+local signs = {
+  { name = "DiagnosticSignError", text = "" },
+  { name = "DiagnosticSignWarn", text = "" },
+  { name = "DiagnosticSignHint", text = "" },
+  { name = "DiagnosticSignInfo", text = "" },
+}
+
+for _, sign in ipairs(signs) do
+  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+end
+
+
 local config = {
   virtual_text = {
     prefix = '●',
   },
-  signs = false,
+  signs = {
+    active = signs,
+  },
   update_in_insert = false,
   underline = true,
   severity_sort = true,
@@ -44,6 +58,14 @@ local on_attach = function(client, bufnr)
 
   if client.name == 'tsserver' then
     require 'illuminate'.on_attach(client)
+    client.resolved_capabilities.document_formatting = false
+  end
+
+  if client.name == 'html' then
+    client.resolved_capabilities.document_formatting = false
+  end
+
+  if client.name == 'cssls' then
     client.resolved_capabilities.document_formatting = false
   end
 end
