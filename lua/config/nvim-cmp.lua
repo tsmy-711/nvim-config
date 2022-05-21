@@ -15,12 +15,12 @@ end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
-  Text = '',
-  Method = 'm',
+  Text = '',
+  Method = '',
   Function = '',
-  Constructor = '',
-  Field = '',
-  Variable = '',
+  Constructor = '',
+  Field = '',
+  Variable = '',
   Class = '',
   Interface = '',
   Module = '',
@@ -41,8 +41,8 @@ local kind_icons = {
   Operator = '',
   TypeParameter = '',
 }
--- find more here: https://www.nerdfonts.com/cheat-sheet
 
+-- find more here: https://www.nerdfonts.com/cheat-sheet
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -64,9 +64,7 @@ cmp.setup {
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
     format = function(entry, vim_item)
-      -- Kind icons
       vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = '[LSP]',
         vsnip = '[Snippet]',

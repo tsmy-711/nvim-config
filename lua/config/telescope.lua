@@ -6,6 +6,7 @@ end
 local opt = { noremap=true, silent=true }
 
 vim.api.nvim_set_keymap('n', '<leader>ff', ':Telescope find_files<CR>', opt)
+vim.api.nvim_set_keymap('n', '<leader>fo', ':Telescope oldfiles<CR>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', opt)
 vim.api.nvim_set_keymap('n', '<leader>fh', ':Telescope help_tags<CR>', opt)

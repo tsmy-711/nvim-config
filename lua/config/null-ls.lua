@@ -10,7 +10,7 @@ local formatting = null_ls.builtins.formatting
 local code_actions = null_ls.builtins.code_actions;
 
 null_ls.setup({
-  debug = true,
+  -- debug = true,
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then
       vim.cmd([[
@@ -23,7 +23,6 @@ null_ls.setup({
   end,
   sources = {
     formatting.prettier.with({ extra_args = { '--single-quote' } }),
-    code_actions.gitsigns,
     code_actions.eslint,
   },
 })

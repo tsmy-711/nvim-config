@@ -39,7 +39,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     auto_open = true,
   },
   update_focused_file = {
-    enable = true,
+    enable = false,
     update_cwd = true,
     ignore_list = {},
   },
@@ -59,7 +59,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   git = {
     enable = true,
     ignore = false,
-    timeout = 400,
+    timeout = 1000,
   },
   actions = {
     change_dir = {

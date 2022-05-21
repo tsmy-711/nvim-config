@@ -1,14 +1,13 @@
 local signs = {
-  { name = "DiagnosticSignError", text = "" },
-  { name = "DiagnosticSignWarn", text = "" },
-  { name = "DiagnosticSignHint", text = "" },
-  { name = "DiagnosticSignInfo", text = "" },
+  { name = 'DiagnosticSignError', text = '' },
+  { name = 'DiagnosticSignWarn', text = '' },
+  { name = 'DiagnosticSignHint', text = '' },
+  { name = 'DiagnosticSignInfo', text = '' },
 }
 
 for _, sign in ipairs(signs) do
-  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
 end
-
 
 local config = {
   virtual_text = {
@@ -47,9 +46,11 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-f>', '<cmd>Lspsaga smart_scroll_with_saga 1<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-b>', '<cmd>Lspsaga smart_scroll_with_saga -1<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>Telescope lsp_definitions theme=dropdown<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gh', '<cmd>Lspsaga lsp_finder<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>Telescope lsp_references theme=dropdown<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'ge', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'go', '<cmd>Telescope diagnostics theme=dropdown<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>[', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>]', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opts)
@@ -74,7 +75,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'html',  'cssls', 'tsserver' }
+local servers = { 'html', 'cssls', 'tsserver' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,

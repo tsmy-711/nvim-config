@@ -20,6 +20,7 @@ packer.startup(function()
   use 'nvim-lua/popup.nvim'
   use 'kyazdani42/nvim-web-devicons'
 
+  use 'williamboman/nvim-lsp-installer'
   use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'j-hui/fidget.nvim'
@@ -57,6 +58,7 @@ packer.startup(function()
   use 'MattesGroeger/vim-bookmarks'
   use 'tom-anders/telescope-vim-bookmarks.nvim'
   use 'norcalli/nvim-colorizer.lua'
+  use 'kevinhwang91/nvim-hlslens'
 
   use 'lukas-reineke/indent-blankline.nvim'
   use 'numToStr/Comment.nvim'
@@ -66,7 +68,7 @@ packer.startup(function()
   use 'windwp/nvim-autopairs'
   use 'tpope/vim-surround'
   use 'RRethy/vim-illuminate'
-
-  -- use 'rmagatti/auto-session'
+  use 'lewis6991/spellsitter.nvim'
+  use 'karb94/neoscroll.nvim'
 end)
 

@@ -8,6 +8,7 @@ lua require('keybindings')
 lua require('plugins')
 
 " 插件配置
+lua require('config.nvim-lsp-installer')
 lua require('config.nvim-lspconfig')
 lua require('config.comment')
 lua require('config.toggleterm')
@@ -31,4 +32,6 @@ lua require('config.illuminate')
 lua require('config.alpha')
 lua require('config.nvim-spectre')
 lua require('config.nvim-colorizer')
+lua require('config.spellsitter')
+lua require('config.neoscroll')
 

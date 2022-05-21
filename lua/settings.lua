@@ -13,11 +13,11 @@ vim.o.syntax = 'enable'
 -- 是否显示绝对行号true
 vim.o.number = true
 -- 是否显示相对行号
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 -- 设定光标上下两侧最少保留的屏幕行数
 vim.o.scrolloff = 6
 -- 设定光标左右两侧最少保留的屏幕行数
-vim.o.sidescrolloff = 6
+vim.o.sidescrolloff = 10
 -- 是否支持鼠标操作
 vim.o.mouse = 'a'
 -- 是否启用系统剪切板
@@ -42,8 +42,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 -- 是否开启代码折叠
 vim.o.foldenable = true
--- 指定代码折叠的策略是按照缩进进行的
-vim.o.foldmethod = 'indent'
 -- 指定代码折叠的最高层级为 100
 vim.o.foldlevel = 100
 vim.o.wrap = false
@@ -52,6 +50,13 @@ vim.o.expandtab = true
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
+vim.o.completeopt = 'menuone,noinsert,noselect'
+vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.opt.fillchars = {
+  vert = " ",
+}
+vim.o.textwidth = 120
+vim.o.colorcolumn = 121
 
 -- leader 键
 vim.g.mapleader = ' '
@@ -60,16 +65,15 @@ vim.g.mapleader = ' '
 vim.cmd('autocmd InsertLeave * :silent !/usr/local/bin/macism com.apple.keylayout.ABC')
 
 -- 主题
--- vim.cmd([[colorscheme dracula]])
--- vim.cmd([[colorscheme doom-one]])
 vim.cmd([[colorscheme OceanicNext]])
 
+-- 背景透明
 vim.cmd([[
   hi Normal guibg=NONE ctermbg=NONE
   hi LineNr guibg=NONE ctermbg=NONE
   hi SignColumn guibg=NONE ctermbg=NONE
   hi EndOfBuffer guibg=NONE ctermbg=NONE
-  hi VertSplit guifg=#363d45 guibg=#363d45
+  " hi VertSplit guifg=#363d45 guibg=#363d45
 ]])
 
 -- 复制高亮
