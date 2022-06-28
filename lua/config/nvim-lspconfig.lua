@@ -33,11 +33,11 @@ vim.diagnostic.config(config)
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap = true, silent = true }
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+  local opts = { noremap = true, silent = true }
+
   vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
   vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
   vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
@@ -58,15 +58,16 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ft', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
   if client.name == 'tsserver' then
+    client.resolved_capabilities.document_formatting = false
+
     require 'illuminate'.on_attach(client)
-    client.resolved_capabilities.document_formatting = false
+    require('nvim-lsp-ts-utils').setup({
+      filter_out_diagnostics_by_code = { 80001 },
+    })
+    require('nvim-lsp-ts-utils').setup_client(client)
   end
 
-  if client.name == 'html' then
-    client.resolved_capabilities.document_formatting = false
-  end
-
-  if client.name == 'cssls' then
+  if client.name == 'html' or client.name == 'cssls' then
     client.resolved_capabilities.document_formatting = false
   end
 end
@@ -75,13 +76,39 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'html', 'cssls', 'tsserver' }
+local servers = { 'html', 'cssls', 'tsserver', 'volar', 'sumneko_lua',  'pyright' }
+local lspconfig = require('lspconfig')
+
 for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup {
+  local opts = {
     on_attach = on_attach,
     capabilities = capabilities,
     flags = {
       debounce_text_changes = 150,
     }
   }
+
+  if lsp == 'sumneko_lua' then
+    opts = vim.tbl_deep_extend(
+      'force',
+      {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { 'vim', 'use' },
+            },
+            workspace = {
+              library = {
+                [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                [vim.fn.stdpath('config') .. '/lua'] = true,
+              },
+            },
+          },
+        },
+      },
+      opts
+    )
+  end
+
+  lspconfig[lsp].setup(opts)
 end

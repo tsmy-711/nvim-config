@@ -33,5 +33,4 @@ lua require('config.alpha')
 lua require('config.nvim-spectre')
 lua require('config.nvim-colorizer')
 lua require('config.spellsitter')
-lua require('config.neoscroll')
 

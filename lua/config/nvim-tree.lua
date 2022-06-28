@@ -39,9 +39,9 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
+    enable = true,
     update_cwd = true,
-    ignore_list = {},
+    ignore_list = { "node_modules" },
   },
   ignore_ft_on_setup = {},
   system_open = {
@@ -57,7 +57,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     exclude = {},
   },
   git = {
-    enable = true,
+    enable = false,
     ignore = false,
     timeout = 1000,
   },

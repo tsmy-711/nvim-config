@@ -25,6 +25,7 @@ packer.startup(function()
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'j-hui/fidget.nvim'
   use 'tami5/lspsaga.nvim'
+  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/nvim-cmp'
@@ -60,6 +61,7 @@ packer.startup(function()
   use 'norcalli/nvim-colorizer.lua'
   use 'kevinhwang91/nvim-hlslens'
 
+  use 'iamcco/markdown-preview.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
