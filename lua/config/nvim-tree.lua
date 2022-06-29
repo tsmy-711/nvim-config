@@ -2,7 +2,8 @@ local opt = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap('n', 'tt', ':NvimTreeToggle<CR>', opt)
 
-vim.g.nvim_tree_special_files = {};
+vim.g.nvim_tree_add_trailing = 1
+vim.g.nvim_tree_special_files = {}
 
 -- setup with all defaults
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
@@ -49,7 +50,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
+    enable = true,
     update_cwd = false,
     ignore_list = {},
   },
@@ -70,18 +71,18 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   },
   filters = {
     dotfiles = false,
-    custom = {},
+    custom = { "^\\.git" },
     exclude = {},
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 400,
   },
   actions = {
     use_system_clipboard = true,
     change_dir = {
-      enable = true,
+      enable = false,
       global = false,
     },
     open_file = {

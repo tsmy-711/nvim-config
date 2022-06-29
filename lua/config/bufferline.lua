@@ -16,7 +16,7 @@ vim.api.nvim_set_keymap('n', '<leader>bl', ':BufferLineCloseLeft<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>br', ':BufferLineCloseRight<CR>', opts)
 
 bufferline.setup{
-	options = { 
+	options = {
     mode = 'buffers',
     numbers = 'none',
     separator_style = 'thin',

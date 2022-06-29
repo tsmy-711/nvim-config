@@ -7,7 +7,7 @@ vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.wo.foldlevel = 99
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'html', 'css', 'vim', 'lua', 'javascript', 'typescript', 'tsx' }, 
+  ensure_installed = { 'html', 'css', 'vim', 'vue', 'lua', 'javascript', 'typescript', 'tsx' },
   autotag = {
     enable = true,
   },

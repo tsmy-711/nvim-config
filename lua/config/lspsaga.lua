@@ -7,7 +7,6 @@ saga.init_lsp_saga {
   infor_sign = '',
   dianostic_header_icon = '   ',
   code_action_icon = ' ',
-  dianostic_header_icon = '   ',
   finder_definition_icon = '  ',
   firename_prompt_prefix = '➤ ',
   nder_definition_icon = '  ',

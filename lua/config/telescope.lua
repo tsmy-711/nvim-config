@@ -18,5 +18,8 @@ telescope.setup{
   defaults = {
     prompt_prefix = ' ',
     selection_caret = '► ',
+    path_display = {
+      -- shorten = { len = 1, exclude = { -1, -2, -3 } }
+    },
   },
 }
