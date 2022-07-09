@@ -72,5 +72,6 @@ packer.startup(function()
   use 'RRethy/vim-illuminate'
   use 'lewis6991/spellsitter.nvim'
   use 'junegunn/vim-easy-align'
+  use 'prettier/vim-prettier'
 end)
 

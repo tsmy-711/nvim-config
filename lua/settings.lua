@@ -67,7 +67,6 @@ vim.cmd('autocmd InsertLeave * :silent !/usr/local/bin/macism com.apple.keylayou
 
 -- 主题
 vim.cmd([[colorscheme OceanicNext]])
--- vim.cmd([[colorscheme doom-one]])
 
 -- 背景透明
 vim.cmd([[

@@ -124,7 +124,6 @@ require("nvim-tree").setup {      auto_reload_on_write = true,
   git = {
     enable = true,
     ignore = false,
-    show_on_dirs = true,
     timeout = 400,
   },
   actions = {

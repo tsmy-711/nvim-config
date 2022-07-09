@@ -58,8 +58,6 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ft', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
   if client.name == 'tsserver' then
-    client.resolved_capabilities.document_formatting = false
-
     require 'illuminate'.on_attach(client)
     require('nvim-lsp-ts-utils').setup({
       filter_out_diagnostics_by_code = { 80001 },
@@ -67,8 +65,8 @@ local on_attach = function(client, bufnr)
     require('nvim-lsp-ts-utils').setup_client(client)
   end
 
-  if client.name == 'html' or client.name == 'cssls' then
-    client.resolved_capabilities.document_formatting = false
+  if client.name == 'tsserver' or client.name == 'html' or client.name == 'cssls' then
+    client.server_capabilities.documentFormattingProvider = false
   end
 end
 

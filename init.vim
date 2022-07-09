@@ -4,7 +4,7 @@ lua require('settings')
 " 键位设置
 lua require('keybindings')
 
-" 插件
+" 插件加载
 lua require('plugins')
 
 " 插件配置
@@ -34,5 +34,4 @@ lua require('config.nvim-spectre')
 lua require('config.nvim-colorizer')
 lua require('config.spellsitter')
 lua require('config.markdown-preview')
-" lua require('config.doom-one')
 
