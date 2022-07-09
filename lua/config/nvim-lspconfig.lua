@@ -11,7 +11,7 @@ end
 
 local config = {
   virtual_text = {
-    prefix = '●',
+    -- prefix = '●',
   },
   signs = {
     active = signs,

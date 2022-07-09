@@ -174,11 +174,6 @@ _G.packer_plugins = {
     path = "/Users/zhengbiwen/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
-  ["neoscroll.nvim"] = {
-    loaded = true,
-    path = "/Users/zhengbiwen/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
-    url = "https://github.com/karb94/neoscroll.nvim"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/zhengbiwen/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -303,6 +298,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/zhengbiwen/.local/share/nvim/site/pack/packer/start/vim-bookmarks",
     url = "https://github.com/MattesGroeger/vim-bookmarks"
+  },
+  ["vim-easy-align"] = {
+    loaded = true,
+    path = "/Users/zhengbiwen/.local/share/nvim/site/pack/packer/start/vim-easy-align",
+    url = "https://github.com/junegunn/vim-easy-align"
   },
   ["vim-illuminate"] = {
     loaded = true,

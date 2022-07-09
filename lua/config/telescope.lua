@@ -19,7 +19,7 @@ telescope.setup{
     prompt_prefix = ' ',
     selection_caret = '► ',
     path_display = {
-      -- shorten = { len = 1, exclude = { -1, -2, -3 } }
+      shorten = { len = 1, exclude = { -1, -2, -3 } }
     },
   },
 }

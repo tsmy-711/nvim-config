@@ -34,4 +34,5 @@ lua require('config.nvim-spectre')
 lua require('config.nvim-colorizer')
 lua require('config.spellsitter')
 lua require('config.markdown-preview')
+" lua require('config.doom-one')
 

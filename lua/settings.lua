@@ -44,19 +44,20 @@ vim.o.smartcase = true
 vim.o.foldenable = true
 -- 指定代码折叠的最高层级为 100
 vim.o.foldlevel = 100
+-- 不换行
 vim.o.wrap = false
 -- 缩进
 vim.o.expandtab = true
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
+
 vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.opt.fillchars = {
   vert = " ",
 }
-vim.o.textwidth = 120
-vim.o.colorcolumn = 121
+vim.o.synmaxcol = 200
 
 -- leader 键
 vim.g.mapleader = ' '
@@ -66,6 +67,7 @@ vim.cmd('autocmd InsertLeave * :silent !/usr/local/bin/macism com.apple.keylayou
 
 -- 主题
 vim.cmd([[colorscheme OceanicNext]])
+-- vim.cmd([[colorscheme doom-one]])
 
 -- 背景透明
 vim.cmd([[

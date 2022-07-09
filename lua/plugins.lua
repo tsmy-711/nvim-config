@@ -71,6 +71,6 @@ packer.startup(function()
   use 'tpope/vim-surround'
   use 'RRethy/vim-illuminate'
   use 'lewis6991/spellsitter.nvim'
-  use 'karb94/neoscroll.nvim'
+  use 'junegunn/vim-easy-align'
 end)
 
