@@ -6,11 +6,11 @@ end
 
 -- Have packer use a popup window
 packer.init {
-  display = {
-    open_fn = function()
-      return require('packer.util').float { border = 'rounded' }
-    end,
-  },
+  -- display = {
+  --   open_fn = function()
+  --     return require('packer.util').float { border = 'rounded' }
+  --   end,
+  -- },
 }
 
 packer.startup(function()
@@ -46,7 +46,7 @@ packer.startup(function()
   use 'folke/which-key.nvim'
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'NTBBloodbath/doom-one.nvim'
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'mhartington/oceanic-next'
   use 'Mofiqul/dracula.nvim'
   use 'goolord/alpha-nvim'
@@ -72,6 +72,5 @@ packer.startup(function()
   use 'RRethy/vim-illuminate'
   use 'lewis6991/spellsitter.nvim'
   use 'junegunn/vim-easy-align'
-  use 'prettier/vim-prettier'
 end)
 

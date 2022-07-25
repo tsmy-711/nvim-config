@@ -9,7 +9,7 @@ local formatting = null_ls.builtins.formatting
 local code_actions = null_ls.builtins.code_actions;
 
 null_ls.setup({
-  debug = true,
+  debug = false,
   on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
       vim.cmd([[
@@ -21,7 +21,7 @@ null_ls.setup({
     end
   end,
   sources = {
-    formatting.prettier.with({ extra_args = { '--single-quote' } }),
+    formatting.prettier.with({ extra_args = { '--single-quote', '--print-width=120' } }),
     code_actions.eslint,
   },
 })

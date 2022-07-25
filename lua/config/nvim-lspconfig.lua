@@ -55,7 +55,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>]', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>Lspsaga rename<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>Lspsaga code_action<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ft', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
   if client.name == 'tsserver' then
     require 'illuminate'.on_attach(client)
@@ -67,6 +67,7 @@ local on_attach = function(client, bufnr)
 
   if client.name == 'tsserver' or client.name == 'html' or client.name == 'cssls' then
     client.server_capabilities.documentFormattingProvider = false
+    client.resolved_capabilities.document_formatting = false
   end
 end
 

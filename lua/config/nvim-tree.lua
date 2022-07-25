@@ -2,7 +2,8 @@ local opt = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap('n', 'tt', ':NvimTreeToggle<CR>', opt)
 
-require("nvim-tree").setup {      auto_reload_on_write = true,
+require("nvim-tree").setup {
+  auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = false,
   hijack_cursor = false,
@@ -118,7 +119,6 @@ require("nvim-tree").setup {      auto_reload_on_write = true,
   },
   filesystem_watchers = {
     enable = false,
-    interval = 100,
     debounce_delay = 50,
   },
   git = {
